@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box-input">
+        <input type="number" required class="input1" placeholder="Hãy nhập số">
+        <input type="number" required class="input2" placeholder="Hãy nhập số">
+    </div>
+    <div class="box-btn">
+        <button class="btn-1">SUM</button>
+        <button class="btn-2">SUBTRACT</button>
+        <button class="btn-3">MULTIPLY</button>
+        <button class="btn-4">DIVIDE</button>
+        <button class="btn-5">RESET</button>
+    </div>
+    <div class="result"></div>
+</body>
+</html>
+
+<script>
+    const input1 = document.querySelector('.input1')
+    const input2 = document.querySelector('.input2')
+    const btn1 = document.querySelector('.btn-1')
+    const btn2 = document.querySelector('.btn-2')
+    const btn3 = document.querySelector('.btn-3')
+    const btn4 = document.querySelector('.btn-4')
+    const btn5 = document.querySelector('.btn-5')
+    const result = document.querySelector('.result')
+
+    function check(input1,input2) {
+        if(typeof input1 != Number && typeof input2!=Number){
+            console.log('ok');
+        }
+    }
+    btn1.onclick = function() {
+        result.innerHTML = parseInt(input1.value)+parseInt(input2.value)
+    }
+    btn2.onclick = function() {
+        result.innerHTML = parseInt(input1.value)-parseInt(input2.value)
+    }
+    btn3.onclick = function() {
+        result.innerHTML = parseInt(input1.value)*parseInt(input2.value)
+    }
+    btn4.onclick = function() {
+        result.innerHTML = parseInt(input1.value)/parseInt(input2.value)
+    }
+    btn5.onclick = function() {
+        input1.value = ""
+        input2.value = ""
+    }
+</script>
